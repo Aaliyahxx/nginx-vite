@@ -5,7 +5,7 @@ FROM node:18 AS build
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
-COPY ./mouse-tracker/package*.json ./
+COPY ./package*.json ./
 
 # Install dependencies
 RUN npm install

@@ -5,19 +5,20 @@ services:
     image: nginx
     container_name: nginx_webserver
     volumes:
-    - ./apps/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    - ./apps/nginx/nginx.conf:/etc/nginx/nginx.conf
     - ./apps/nginx/logs:/var/logs/nginx
     ports:
     - "9080:80"
     environment:
     - NGINX_HOST=sv85337.broadridge.com
     - NGINX_PORT=80
+    # command: [nginx-debug, '-g', 'daemon off;']
     restart: always
     networks:
       dev:
 
-  test-app:
-    image: vite-mouse-tracker:latest
+  test_app:
+    image: vite-tracker:latest
     container_name: test_app
     ports:
     - "8080:80"

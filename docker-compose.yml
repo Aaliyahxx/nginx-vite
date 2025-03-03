@@ -20,8 +20,8 @@ services:
   test_app:
     image: vite-tracker:latest
     container_name: test_app
-    ports:
-    - "8080:80"
+    # ports:
+    # - "8080:80"
     restart: always
     networks:
       dev:
